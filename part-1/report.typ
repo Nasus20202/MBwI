@@ -184,7 +184,28 @@ Na podstawie pozyskanych danych utworzony został arkusz z informacjami:
 = Systematic Literature Review results
 
 == Results in numbers
-_Number of articles in each SLR phase from each database._
+#figure(
+  align(center)[
+    #table(
+      columns: (1.5fr, 1fr, 1.2fr, 1.2fr, 1.2fr),
+      align: (left, center, center, center, center),
+      stroke: 0.5pt + black,
+      
+      [*Baza danych*], 
+      [*Znalezione pozycje*], 
+      [*Po usunięciu duplikatów*], 
+      [*Po selekcji (Screening)*], 
+      [*Po przeczytaniu (Full-text)*],
+      
+      [IEEExplore], [3], [3], [...], [...],
+      [Katalog BPG], [47], [45 (2)], [...], [...],
+      [SpringerLink], [99], [99], [...], [...],
+      
+      [*Suma*], [*149*], [*147 (2)*], [*...*], [*...*]
+    )
+  ],
+  caption: [Zestawienie liczbowe artykułów na poszczególnych etapach procesu SLR z podziałem na bazy danych]
+)
 
 == Articles selected for data extraction
 _List of articles from search results qualifying for data extraction according to inclusion, exclusion and quality criteria._
