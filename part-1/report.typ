@@ -58,6 +58,7 @@ Hipotezą badawczą jest weryfikacja możliwości skutecznego adaptowania się a
 == Goals and questions
 - Zidentyfikowanie i analiza istniejących badań dotyczących wykorzystania Large Language Models jako agentów decyzyjnych w systemach złożonych, szczególnie w środowiskach gier.
 - Identyfikacja technik oceny skuteczności agentów LLM w zadaniach strategicznych.
+- Zapoznanie się z istniejącymi sposobami przekazywania do agenta AI informacji o systemie złożonym.
 - Zidentyfikowanie ograniczeń, wyzwań oraz luk badawczych w wykorzystaniu LLM jako uniwersalnych agentów w systemach złożonych.
 // - Analiza metod adaptacji modeli LLM do dynamicznych i wieloagentowych środowisk.
 // - Określenie, w jaki sposób modele LLM są integrowane z mechanizmami podejmowania decyzji (np. planowanie, reasoning, narzędzia agentowe).
