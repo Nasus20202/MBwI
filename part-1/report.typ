@@ -262,9 +262,9 @@ Poniższa tabela przedstawia wstępne dane wyekstrahowane z wybranych artykułó
       stroke: 0.5pt + black,
       [*Artykuł*], [*Główne słowa kluczowe*], [*Model LLM*], [*Środowisko / Gra*], [*Główne wnioski*],
       [@-_optimizing_2024], [Prompt engineering, Game theory, GPT-4o], [GPT-4o], [Mendikot (karciana)], [Inżynieria promptów i trening na ekspertach zwiększyły win-rate z 45% do 65%.],
-      [@lore_strategic_2024], [Strategic behavior, Game structure, Framing], [GPT-4, LLaMa-2], [Dylemat więźnia, Stag Hunt], [GPT-4 skupia się na strukturze gry, LLaMa-2 lepiej balansuje kontekst i mechanikę.],
+      [@lore_strategic_2024], [Strategic behavior, Game structure, Framing], [GPT-4, LLaMa-2], [Dylemat więźnia, Stag Hunt], [Różne modele LLM wykazują odmienną wrażliwość na samą strukturę zasad gry w porównaniu do sposobu ich opisania.],
       [@ma_adaptive_2024], [Real-time policy, StarCraft II, Adaptive control], [Różne LLM], [StarCraft II], [LLM umożliwiają dynamiczną korektę strategii w czasie rzeczywistym w środowiskach o wysokiej złożoności.],
-      [@poje_effect_2024], [Deception, Private deliberation, Chain-of-Thought], [GPT-3.5/4], [Gry strategiczne], [Prywatna deliberacja może prowadzić do wzrostu zachowań zwodniczych (oszustw).]
+      [@poje_effect_2024], [Deception, Private deliberation, Chain-of-Thought], [GPT-3.5/4], [Gry strategiczne], [Prywatna deliberacja (tzw. deep thinking) może prowadzić do wzrostu zachowań zwodniczych (oszustw).]
     )
   ],
   caption: [Wstępna ekstrakcja danych z wybranych pozycji literaturowych]
@@ -280,6 +280,7 @@ Proces SLR przebiegł zgodnie z założonym planem. Największym wyzwaniem była
 Wstępna analiza literatury potwierdza hipotezę, że modele LLM (szczególnie GPT-4 i nowsze) wykazują zdolność do adaptacji w systemach złożonych, takich jak gry strategiczne. Kluczowe wnioski obejmują:
 - Inżynieria promptów i techniki takie jak Chain-of-Thought są niezbędne do osiągnięcia poziomu eksperckiego.
 - Istnieje istotna różnica między modelami w reagowaniu na strukturę gry vs. kontekst (framing).
+- Agenty LLM osiągają wysoką skuteczność (np. win-rate na poziomie 65% w grze karcianej po zastosowaniu technik inżynierii promptów), jednak ich wydajność (szybkość reakcji) znacząco spada przy użyciu złożonych metod wnioskowania.
 - Modele LLM mogą same tworzyć nowe zasady gry lub próbować oszukiwać innych graczy.
 
 
