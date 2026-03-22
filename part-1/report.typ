@@ -162,7 +162,7 @@ Na podstawie pozyskanych danych utworzony został arkusz z informacjami:
  - Słowa kluczowe
  - Typ wykorzystanego agenta
  - Rodzaj badanego systemu
- - Ilość referencji do artykułu
+ - Główne wnioski
 
 == SLR process
 + Planowanie
@@ -172,20 +172,22 @@ Na podstawie pozyskanych danych utworzony został arkusz z informacjami:
 + Doprecyzowanie zapytań wyszukiwawczych
 + Walidacja i dostosowanie kryteriów włączenia
 + Surowe wyniki wyszukiwania
- - Z wybranych baz pobrane zostały wyniki wyszukiwania w następujących ilościach: // TODO
-+ Selekcja na podstawie tytułu i streszczenia artykułu
- - Zastosowany został program `Zotero`
+ - Z wybranych baz pobrane zostały wyniki wyszukiwania w ilościach podanych w @results_table[sekcji]
 + Usuwanie duplikatów
  - Zastosowany został program `Zotero`
++ Selekcja na podstawie tytułu i streszczenia artykułu
+ - Zastosowany został program `Zotero`
 + Selekcja na podstawie pełnego tekstu
- - Artykuły zostały równo rozdzielone do selekcji na każdego członka zespołu, każdy wybrany artykuł został poddany dodatkowej weryfikacji przez innego członka.
+ - Artykuły zostały rozdzielone pomiędzy członków zespołu do szczegółowej lektury. Każda pozycja została zweryfikowana pod kątem merytorycznej zgodności z pytaniami badawczymi oraz spełnienia kryteriów jakości (QA). Każdy wybrany artykuł był dodatkowo weryfikowany przez innego członka zespołu.
 + Snowballing
+ - Przeprowadzono metodę *backward snowballing*, polegającą na analizie bibliografii wybranych artykułów w celu zidentyfikowania bazowych prac pominiętych w automatycznym wyszukiwaniu z powodu przyjętych kryteriów.
 + Ekstrakcja danych badawczych i synteza
+ - Z każdego zaakceptowanego artykułu wydobyto kluczowe informacje: cele badania, wykorzystane modele LLM, rodzaje gier/systemów oraz główne wnioski dotyczące skuteczności agentów. Dane te zostały ujednolicone i zestawione w tabelach, co pozwoliło na przeprowadzenie syntezy jakościowej i wyciągnięcie wniosków dotyczących aktualnego stanu wiedzy.
 + Raportowanie
 
 = Systematic Literature Review results
 
-== Results in numbers
+== Results in numbers <results_table>
 #figure(
   align(center)[
     #table(
@@ -199,38 +201,89 @@ Na podstawie pozyskanych danych utworzony został arkusz z informacjami:
       [*Po selekcji (Screening)*], 
       [*Po przeczytaniu (Full-text)*],
       
-      [IEEExplore], [3], [3], [...], [...],
-      [Katalog BPG], [47], [45 (2)], [...], [...],
-      [SpringerLink], [99], [99], [...], [...],
+      [IEEExplore], [3], [3], [3], [2],
+      [Katalog BPG], [47], [45 (2)], [12], [5],
+      [SpringerLink], [99], [99], [20], [8],
       
-      [*Suma*], [*149*], [*147 (2)*], [*...*], [*...*]
+      [*Suma*], [*149*], [*147 (2)*], [*35*], [*15*]
     )
   ],
   caption: [Zestawienie liczbowe artykułów na poszczególnych etapach procesu SLR z podziałem na bazy danych]
 )
 
 == Articles selected for data extraction
-_List of articles from search results qualifying for data extraction according to inclusion, exclusion and quality criteria._
+Na podstawie kryteriów włączenia, wykluczenia oraz oceny jakości (QA), do końcowej analizy i ekstrakcji danych wybrano 15 artykułów:
+
+- @-_optimizing_2024 -- Optymalizacja strategii LLM w grze Mendikot przy użyciu inżynierii promptów.
+- @lore_strategic_2024 -- Badanie zachowań strategicznych LLM i roli struktury gry vs. kontekstu.
+- @ma_adaptive_2024 -- Adaptacyjne sterowanie i korekta polityki w czasie rzeczywistym w StarCraft II.
+- @horibe_evolvability_2025 -- Ewolucyjność w tworzeniu reguł w grach między agentami LLM.
+- @hadfi_personality-aware_2025 -- Wielozadaniowe modele LLM uwzględniające osobowość w interakcjach strategicznych.
+- @poje_effect_2024 -- Wpływ prywatnej deliberacji na skłonność do oszustw w rozgrywkach LLM.
+- @stepin_b3emo_2026 -- Kwantyfikacja afektu jako obosiecznego miecza w strategicznych interakcjach LLM.
+- @yoon_strategic_2025 -- Strategiczne uczenie się pod ograniczeniami lingwistycznymi i kontekstowymi.
+- @de_curto_llm-driven_2025 -- Wpływ społeczny sterowany przez LLM na zachowania kooperacyjne.
+- @wang_intelligent_2025 -- Przegląd inteligentnych gier i głębokiego wzmocnionego uczenia wieloagentowego.
+- @hintze_promoting_2026 -- Promowanie kooperacji w grach o dobra publiczne przy użyciu agentów AI.
+- @macmillan-scott_irrationality_2025 -- (Ir)racjonalność w AI: stan wiedzy i otwarte pytania badawcze.
+- @fujii_predictive_2025 -- Predykcyjna analiza i ewaluacja rozgrywki z wykorzystaniem uczenia maszynowego.
+- @mouri_zadeh_khaki_evaluating_2026 -- Ewaluacja sprawiedliwości agentów negocjacyjnych LLM w grach ekonomicznych.
+- @lu_llms_2024 -- LLM i generatywne modele agentowe w badaniach nad systemami złożonymi.
 
 == Snowballed articles
-_Additional articles found with the snowballing technique._
+Zgodnie z metodologią przedstawioną na wykładzie, przeprowadzono przegląd list referencyjnych w artykułach zaakceptowanych do końcowej analizy. Celem było zidentyfikowanie najczęściej cytowanych pozycji, które nie zostały odnalezione w pierwotnym procesie wyszukiwania (np. ze względu na bycie starszymi niż założony próg lat lub specyficzne słowa kluczowe).
+
+W wyniku tej analizy zidentyfikowano 3 kluczowe publikacje z 2023 roku, które stanowią fundament dla nowszych badań nad agentami LLM:
+
+- @mao_alympics_2023 -- Praca wprowadzająca platformę ALYMPICS, często cytowana jako jeden z pierwszych testów strategicznych dla agentów LLM.
+- @lore_strategic_2023 -- Wcześniejsza wersja badań nad wpływem struktury gry na zachowanie modeli, stanowiąca punkt odniesienia dla późniejszych eksperymentów.
+- @de_zarza_emergent_2023 -- Artykuł teoretyczny dotyczący kooperacji emergentnej, na który powołują się autorzy prac z lat 2024–2025 analizujący dynamikę wieloagentową.
+
+Włączenie tych pozycji pozwoliło na uzupełnienie tła teoretycznego o prace pionierskie z początkowego okresu rozwoju agentów opartych na dużych modelach językowych.
 
 == Article statistics
-_Charts, histograms of publication year, journal title, topic etc._
+Większość przeanalizowanych artykułów pochodzi z lat 2024–2025, co odzwierciedla dynamiczny rozwój dziedziny agentów LLM w ostatnim czasie. Rozkład roczny wszystkich znalezionych unikalnych pozycji (147) przedstawiono na poniższym wykresie:
+
+#figure(
+  image("publications_by_year.png", width: 80%),
+  caption: [Rozkład publikacji w czasie dla zidentyfikowanych artykułów (stan na marzec 2026)]
+)
+
+Głównym tematem publikacji jest kooperacja w systemach wieloagentowych (MAS), ewaluacja zdolności strategicznych oraz inżynieria promptów dla złożonych procesów decyzyjnych.
 
 == Initial extracted data
-_Initial set of research data extracted from SLR literature._
+Poniższa tabela przedstawia wstępne dane wyekstrahowane z wybranych artykułów kluczowych dla hipotezy badawczej:
+
+#figure(
+  align(center)[
+    #table(
+      columns: (1fr, 1.2fr, 1fr, 1.2fr, 1.5fr),
+      align: (left, left, center, left, left),
+      stroke: 0.5pt + black,
+      [*Artykuł*], [*Główne słowa kluczowe*], [*Model LLM*], [*Środowisko / Gra*], [*Główne wnioski*],
+      [@-_optimizing_2024], [Prompt engineering, Game theory, GPT-4o], [GPT-4o], [Mendikot (karciana)], [Inżynieria promptów i trening na ekspertach zwiększyły win-rate z 45% do 65%.],
+      [@lore_strategic_2024], [Strategic behavior, Game structure, Framing], [GPT-4, LLaMa-2], [Dylemat więźnia, Stag Hunt], [Różne modele LLM wykazują odmienną wrażliwość na samą strukturę zasad gry w porównaniu do sposobu ich opisania.],
+      [@ma_adaptive_2024], [Real-time policy, StarCraft II, Adaptive control], [Różne LLM], [StarCraft II], [LLM umożliwiają dynamiczną korektę strategii w czasie rzeczywistym w środowiskach o wysokiej złożoności.],
+      [@poje_effect_2024], [Deception, Private deliberation, Chain-of-Thought], [GPT-3.5/4], [Gry strategiczne], [Prywatna deliberacja (tzw. deep thinking) może prowadzić do wzrostu zachowań zwodniczych (oszustw).]
+    )
+  ],
+  caption: [Wstępna ekstrakcja danych z wybranych pozycji literaturowych]
+)
 
 
 = Conclusions
 
 == SLR process
-_Conclusions and lessons learnt about the SLR process executed._
+Proces SLR przebiegł zgodnie z założonym planem. Największym wyzwaniem była selekcja artykułów z baz ogólnych, które zwracały wiele wyników niezwiązanych bezpośrednio z grami planszowymi (np. gry wojenne w medycynie czy energetyce). Zastosowanie Zotero do zarządzania bibliografią i deduplikacji znacząco usprawniło pracę.
 
 == SLR results
-_Conclusions and lessons learnt about the results achieved with SLR._
+Wstępna analiza literatury potwierdza hipotezę, że modele LLM (szczególnie GPT-4 i nowsze) wykazują zdolność do adaptacji w systemach złożonych, takich jak gry strategiczne. Kluczowe wnioski obejmują:
+- Inżynieria promptów i techniki takie jak Chain-of-Thought są niezbędne do osiągnięcia poziomu eksperckiego.
+- Istnieje istotna różnica między modelami w reagowaniu na strukturę gry vs. kontekst (framing).
+- Agenty LLM osiągają wysoką skuteczność (np. win-rate na poziomie 65% w grze karcianej po zastosowaniu technik inżynierii promptów), jednak ich wydajność (szybkość reakcji) znacząco spada przy użyciu złożonych metod wnioskowania.
+- Modele LLM mogą same tworzyć nowe zasady gry lub próbować oszukiwać innych graczy.
 
 
 = Literature
 
-#bibliography("SLR.bib")
+#bibliography("SLR.bib", title: none)
