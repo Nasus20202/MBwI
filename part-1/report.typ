@@ -212,7 +212,7 @@ Na podstawie pozyskanych danych utworzony został arkusz z informacjami:
 )
 
 == Articles selected for data extraction
-Na podstawie kryteriów włączenia, wykluczenia oraz oceny jakości (QA), do końcowej analizy i ekstrakcji danych wybrano 15 artykułów:
+Na podstawie kryteriów włączenia, wykluczenia oraz oceny jakości (QA), do pełnej lektury i analizy wybrano 15 artykułów:
 
 - @-_optimizing_2024 -- Optymalizacja strategii LLM w grze Mendikot przy użyciu inżynierii promptów.
 - @lore_strategic_2024 -- Badanie zachowań strategicznych LLM i roli struktury gry vs. kontekstu.
@@ -252,36 +252,84 @@ Większość przeanalizowanych artykułów pochodzi z lat 2024–2025, co odzwie
 Głównym tematem publikacji jest kooperacja w systemach wieloagentowych (MAS), ewaluacja zdolności strategicznych oraz inżynieria promptów dla złożonych procesów decyzyjnych.
 
 == Initial extracted data
-Poniższa tabela przedstawia wstępne dane wyekstrahowane z wybranych artykułów kluczowych dla hipotezy badawczej:
+Poniższa tabela przedstawia dane wyekstrahowane z wybranych artykułów. Dla każdego artykułu wiersz z głównymi wnioskami obejmuje pełną szerokość tabeli.
 
-#figure(
-  align(center)[
-    #table(
-      columns: (1fr, 1.2fr, 1fr, 1.2fr, 1.5fr),
-      align: (left, left, center, left, left),
+#set text(size: 8.5pt)
+#let wniosek(body) = table.cell(colspan: 4, fill: luma(245), body)
+#table(
+      columns: (1.6fr, 1.8fr, 1.3fr, 1.5fr),
+      align: (left, left, left, left),
       stroke: 0.5pt + black,
-      [*Artykuł*], [*Główne słowa kluczowe*], [*Model LLM*], [*Środowisko / Gra*], [*Główne wnioski*],
-      [@-_optimizing_2024], [Prompt engineering, Game theory, GPT-4o], [GPT-4o], [Mendikot (karciana)], [Inżynieria promptów i trening na ekspertach zwiększyły win-rate z 45% do 65%.],
-      [@lore_strategic_2024], [Strategic behavior, Game structure, Framing], [GPT-4, LLaMa-2], [Dylemat więźnia, Stag Hunt], [Różne modele LLM wykazują odmienną wrażliwość na samą strukturę zasad gry w porównaniu do sposobu ich opisania.],
-      [@ma_adaptive_2024], [Real-time policy, StarCraft II, Adaptive control], [Różne LLM], [StarCraft II], [LLM umożliwiają dynamiczną korektę strategii w czasie rzeczywistym w środowiskach o wysokiej złożoności.],
-      [@poje_effect_2024], [Deception, Private deliberation, Chain-of-Thought], [GPT-3.5/4], [Gry strategiczne], [Prywatna deliberacja (tzw. deep thinking) może prowadzić do wzrostu zachowań zwodniczych (oszustw).]
+      table.header(
+        [*Artykuł*], [*Główne słowa kluczowe*], [*Model LLM*], [*Środowisko / Gra*],
+      ),
+
+      [@-_optimizing_2024 — _Optimizing LLM Strategies for Playing Mendikot using Prompt Engineering_],
+      [Prompt engineering, game theory],
+      [GPT-4o],
+      [Mendikot (gra karciana)],
+      wniosek[Przedmiotem artykułu była optymalizacja strategii modelu GPT-4o w tradycyjnej indyjskiej grze karcianej Mendikot przy użyciu zaawansowanej inżynierii promptów. Badanie wykazało, że zastosowanie technik takich jak uczenie na wzorcach eksperckich i dynamiczna modyfikacja promptów pozwoliło podnieść odsetek wygranych z 45% do 65%, co stanowi istotny wzrost w środowisku o niepełnej informacji. Wynik ten sugeruje, że odpowiednio zaprojektowane prompty mogą skutecznie zastępować tradycyjne metody treningu w grach karcianych, co jest bezpośrednio obiecujące dla naszego projektu dotyczącego adaptacji agenta LLM do gier planszowych wyłącznie na podstawie instrukcji tekstowej.],
+
+      [@lore_strategic_2024 — _Strategic Behavior of Large Language Models and the Role of Game Structure versus Contextual Framing_],
+      [Strategic behavior, game structure, framing],
+      [GPT-4, LLaMA-2-70B],
+      [Dylemat więźnia, Stag Hunt],
+      wniosek[Przedmiotem artykułu było zbadanie, w jakim stopniu zachowania strategiczne modeli LLM zależą od struktury matematycznej gry w porównaniu z jej opisem słownym (tzw. framing). Badanie wykazało istotne różnice między modelami — GPT-4 reagował silniej na zmianę struktury wypłat, natomiast LLaMA-2-70B był bardziej podatny na kontekstowe sformułowanie scenariusza, co wskazuje na fundamentalną rozbieżność w sposobie przetwarzania informacji strategicznej. Odkrycie to ma kluczowe znaczenie dla projektowania agentów do gier planszowych, ponieważ sugeruje, że sam sposób przekazania reguł (np. styl instrukcji) może radykalnie wpłynąć na jakość podejmowanych decyzji.],
+
+      [@ma_adaptive_2024 — _Adaptive Command: Real-Time Policy Adjustment via Language Models in StarCraft II_],
+      [Real-time policy, adaptive control],
+      [GPT-4, Claude 2, Gemini Pro],
+      [StarCraft II],
+      wniosek[Przedmiotem artykułu była analiza poziomu gry różnych agentów LLM w strategię czasu rzeczywistego StarCraft II. Badanie wykazało, że modele umożliwiają korektę strategii w czasie rzeczywistym w środowiskach o wysokiej złożoności, dynamicznie dostosowując politykę działania na podstawie zmieniającego się stanu gry bez konieczności ponownego trenowania. Daje to nadzieję na dobre radzenie sobie modeli także w badanych przez nas grach planszowych, gdzie agent musi adaptować się do ruchów przeciwnika i zmieniającego się stanu rozgrywki w oparciu o sam opis reguł.],
+
+      [@yoon_strategic_2025 — _Strategic Learning Under Linguistic and Contextual Constraints: A Theoretical Framework for LLM-Based Multi-Agent Coordination_],
+      [Context window, Nash equilibrium, bounded memory, phase transitions],
+      [GPT-4o, GPT-4-turbo, LLaMA-3-70B, Mistral-7B],
+      [Linguistic Uncertainty Game (LUG)],
+      wniosek[Przedmiotem artykułu było opracowanie formalnego modelu matematycznego (Context-Constrained Nash Equilibrium) opisującego ograniczenia okna kontekstowego LLM w uczeniu się strategicznym. Badanie wykazało istnienie przejść fazowych przy ~4096 tokenach kontekstu — poniżej tego progu skuteczność agenta dramatycznie spada — oraz zidentyfikowało trzy reżimy operacyjne: ograniczony pamięcią, ograniczony kontekstem i nieograniczony, osiągając 18,7% poprawę wydajności. Wyniki te mają bezpośrednie przełożenie na nasz projekt, ponieważ obszerne instrukcje gier planszowych mogą przekraczać próg efektywnego przetwarzania informacji strategicznej.],
+
+      [@lu_llms_2024 — _LLMs and Generative Agent-Based Models for Complex Systems Research_],
+      [Complex systems, game theory, social dynamics, agent-based models],
+      [GPT-3.5-turbo, GPT-4, LLaMA-2],
+      [Dylemat więźnia, sieci złożone, dynamika społeczna],
+      wniosek[Przedmiotem artykułu był obszerny przegląd zastosowań LLM i generatywnych modeli agentowych (GABM) w badaniach nad systemami złożonymi, obejmujący sieci złożone, teorię gier, dynamikę społeczną i modelowanie epidemii. Kluczowe odkrycie dotyczy kooperatywności — LLM są bardziej skłonne do współpracy niż ludzie w Dylemacie Więźnia (65,4% vs 37%), lecz GPT-4 w wariancie iterowanym stosował strategię _unforgiving tit-for-tat_ — po jednej zdradzie przeciwnika trwale przechodził na rywalizację. Praca kompleksowo opisuje, w jaki sposób LLM reprodukują ludzkie wzorce zachowań — sprawiedliwość, kooperację, przestrzeganie norm — ale z istotnymi ograniczeniami (wrażliwość na prompt, halucynacje), które muszą być uwzględnione przy projektowaniu agenta do gier planszowych.],
+
+      [@vidler_playing_2025 — _Playing Games with Large Language Models: Randomness and Strategy_],
+      [Game theory, stochasticity, loss aversion],
+      [GPT-4o-mini],
+      [Kamień-Papier-Nożyce, Dylemat więźnia],
+      wniosek[Przedmiotem artykułu było przetestowanie zdolności modelu GPT-4o-mini do gry w dwie klasyczne gry: Kamień-Papier-Nożyce (RPS) i Dylemat Więźnia (PD). Badanie wykazało, że LLM „nie są zbyt stochastyczne" — model wykazywał silne uprzedzenia w generowaniu rzekomo losowych wyborów, rozwijał strategie unikania przegranej (loss aversion), a w RPS rozgrywki szybko zbiegały do patowej powtarzalności. Wyniki wskazują na fundamentalne ograniczenie LLM w grach wymagających losowości — agent grający w gry planszowe z elementem losowym może potrzebować zewnętrznego generatora losowości zamiast polegać na „losowych" wyborach modelu.],
     )
-  ],
-  caption: [Wstępna ekstrakcja danych z wybranych pozycji literaturowych]
-)
+#set text(size: 11pt)
+_Tabela 2: Ekstrakcja danych z wybranych pozycji literaturowych_
 
 
 = Conclusions
 
 == SLR process
-Proces SLR przebiegł zgodnie z założonym planem. Największym wyzwaniem była selekcja artykułów z baz ogólnych, które zwracały wiele wyników niezwiązanych bezpośrednio z grami planszowymi (np. gry wojenne w medycynie czy energetyce). Zastosowanie Zotero do zarządzania bibliografią i deduplikacji znacząco usprawniło pracę.
+Proces SLR przebiegł zgodnie z założonym planem. Największym wyzwaniem była selekcja artykułów z baz ogólnych, które zwracały wiele wyników niezwiązanych bezpośrednio z grami planszowymi (np. gry wojenne w medycynie czy energetyce). Zastosowanie Zotero do zarządzania bibliografią i deduplikacji znacząco usprawniło pracę. W sumie przeanalizowano 147 unikalnych pozycji, z których do końcowej ekstrakcji danych wybrano 6 artykułów najbardziej powiązanych z hipotezą badawczą.
 
 == SLR results
-Wstępna analiza literatury potwierdza hipotezę, że modele LLM (szczególnie GPT-4 i nowsze) wykazują zdolność do adaptacji w systemach złożonych, takich jak gry strategiczne. Kluczowe wnioski obejmują:
-- Inżynieria promptów i techniki takie jak Chain-of-Thought są niezbędne do osiągnięcia poziomu eksperckiego.
-- Istnieje istotna różnica między modelami w reagowaniu na strukturę gry vs. kontekst (framing).
-- Agenty LLM osiągają wysoką skuteczność (np. win-rate na poziomie 65% w grze karcianej po zastosowaniu technik inżynierii promptów), jednak ich wydajność (szybkość reakcji) znacząco spada przy użyciu złożonych metod wnioskowania.
-- Modele LLM mogą same tworzyć nowe zasady gry lub próbować oszukiwać innych graczy.
+Zestawienie danych z sześciu przeanalizowanych artykułów ujawnia kilka przekrojowych prawidłowości dotyczących agentów LLM w środowiskach gier.
+
+=== Prompt jest dominującym czynnikiem skuteczności
+Trzy niezależne badania wskazują spójnie, że sposób konstrukcji promptu ma większy wpływ na jakość gry agenta niż sam wybór modelu. W grze Mendikot @-_optimizing_2024 zastosowanie inżynierii promptów podniosło win-rate z 45% do 65% — przy tym samym modelu GPT-4o. Jednocześnie @lore_strategic_2024 wykazali, że zmiana sformułowania reguł (framing) przy niezmienionej strukturze wypłat prowadzi do diametralnie różnych decyzji strategicznych. Te obserwacje łączy trzeci wynik — @yoon_strategic_2025 zidentyfikował próg ~4096 tokenów kontekstu, poniżej którego skuteczność agenta gwałtownie spada. Razem oznacza to, że w naszym projekcie nie wystarczy wybrać „najlepszy model" — kluczowe będzie, _jak_ i _ile_ informacji o grze planszowej przekażemy agentowi w prompcie.
+
+=== LLM wykazują systematyczne uprzedzenia behawioralne
+Dane z tabeli ujawniają, że agenty LLM nie zachowują się jak racjonalni gracze — mają powtarzalne, przewidywalne odchylenia od optymalnej strategii. @vidler_playing_2025 wykazał silną awersję do straty (loss aversion) i niezdolność do generowania losowych wyborów w RPS. @lu_llms_2024 z kolei udokumentował nadmierną kooperatywność LLM w Dylemacie Więźnia (65,4% vs 37% u ludzi), ale jednocześnie GPT-4 w wariancie iterowanym (wielorundowym) stosował strategię _unforgiving tit-for-tat_ — po jednej zdradzie przeciwnika trwale przechodził na strategię rywalizacyjną, nie wracając już do kooperacji. Zestawienie tych wyników pokazuje, że uprzedzenia LLM są systematyczne, ale różnią się w zależności od kontekstu gry — agent w grze planszowej będzie więc wymagał kalibracji pod kątem konkretnej mechaniki (np. czy gra wymaga losowości, czy kooperacji).
+
+=== Paradoks adaptacji: złożoność pomaga, prostota szkodzi
+Zaskakującym wnioskiem z porównania danych jest to, że LLM radzą sobie _lepiej_ w złożonych środowiskach niż w prostych. W StarCraft II @ma_adaptive_2024 agenty skutecznie adaptowały strategię w czasie rzeczywistym, dynamicznie reagując na zmiany stanu gry. Tymczasem w elementarnym Kamień-Papier-Nożyce @vidler_playing_2025 model zbiegał do patowej powtarzalności i nie potrafił przełamać schematów. Wyjaśnieniem może być fakt, że złożone gry dostarczają bogatszego kontekstu tekstowego, na którym LLM operuje naturalnie, natomiast gry wymagające czystej losowości lub prostej heurystyki obnażają fundamentalne ograniczenie modelu — brak prawdziwej stochastyczności. Dla naszego projektu oznacza to, że gry planszowe o bogatszej mechanice (wiele reguł, interakcje między komponentami) mogą paradoksalnie być łatwiejsze dla agenta niż gry o prostych, ale losowych rozstrzygnięciach.
+
+=== Wybór modelu nie jest obojętny
+Choć prompt dominuje, dane z tabeli pokazują też, że modele różnią się między sobą w sposób jakościowy, a nie tylko ilościowy. @lore_strategic_2024 wykazał, że GPT-4 i LLaMA-2-70B reagują na _inne_ aspekty gry — GPT-4 na strukturę wypłat, LLaMA-2 na narracyjny kontekst. @lu_llms_2024 z kolei pokazał, że GPT-4 w grach iterowanych trwale karze zdradę (jak opisano powyżej), podczas gdy GPT-3.5 jest skłonny do „przebaczenia" — mimo że oba modele są kooperatywne w wariancie jednorazowym. Oznacza to, że w naszym projekcie wybór modelu powinien być świadomą decyzją powiązaną z typem gry planszowej — model wrażliwy na narrację może lepiej radzić sobie z grami o tematycznych instrukcjach, a model wrażliwy na strukturę — z grami o ścisłych regułach.
+
+=== Implikacje dla projektu
+Z powyższej syntezy wynikają cztery konkretne rekomendacje:
++ *Projekt promptu ważniejszy niż wybór modelu* — nakład pracy powinien iść przede wszystkim w iteracyjne testowanie sposobu przekazania reguł gry (styl, kolejność, szczegółowość), a nie w porównywanie kolejnych modeli @-_optimizing_2024 @lore_strategic_2024.
++ *Zarządzanie budżetem kontekstu* — instrukcje gier planszowych powinny być kompresowane lub segmentowane tak, aby zmieścić się powyżej progu ~4096 tokenów efektywnego przetwarzania strategicznego @yoon_strategic_2025.
++ *Zewnętrzna losowość i kalibracja* — agent powinien korzystać z zewnętrznego generatora losowości w grach z elementem losowym, a jego tendencje behawioralne (np. nadmierna kooperacja, loss aversion) powinny być testowane i korygowane na etapie ewaluacji @vidler_playing_2025 @lu_llms_2024.
++ *Zaczynać od gier o bogatej mechanice* — wbrew intuicji, złożone gry planszowe z rozbudowanymi regułami mogą dawać agentowi LLM więcej kontekstu do pracy niż gry proste, co jest spójne z obserwowanym paradoksem adaptacji @ma_adaptive_2024 @vidler_playing_2025.
 
 
 = Literature
