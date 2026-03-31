@@ -27,7 +27,6 @@
         columns: (1fr, 1fr),
         gutter: 0.75cm,
         [Krzysztof Nasuta 193328], [Bartłomiej Krawisz 193319],
-        grid.cell(colspan: 2)[Mikołaj Klikowicz 193264],
         [Filip Dawidowski 193433], [Stanisław Nieradko 193044],
       )
     ]

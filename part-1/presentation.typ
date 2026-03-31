@@ -8,7 +8,7 @@
   config-info(
     title: [Raport z systematycznego przeglądu literatury],
     subtitle: [Modele LLM jako uniwersalne agenty adaptujące się do systemów złożonych na przykładzie gier planszowych],
-    author: [Krzysztof Nasuta, Bartłomiej Krawisz, Mikołaj Klikowicz, \ Filip Dawidowski, Stanisław Nieradko],
+    author: [Krzysztof Nasuta, Bartłomiej Krawisz \ Filip Dawidowski, Stanisław Nieradko],
     date: [2 kwietnia 2026],
     institution: [Opiekun: dr inż. Krzysztof Manuszewski],
   ),
