@@ -87,6 +87,7 @@ Weryfikacja możliwości skutecznego adaptowania się agenta LLM do reguł gry o
 )
 
 == Zapytania wyszukiwarkowe (Search Strings)
+#[
 #set text(size: 14pt)
 ```sql
 ("large language model" OR "large language models" OR "LLM" OR "foundation models" OR "language model agents" OR "transformer models")
@@ -97,6 +98,7 @@ AND
 AND
 ("board games" OR "game environments" OR "strategic games" OR "game-playing agents" OR "AI in games" OR "game AI" OR "game theory")
 ```
+]
 
 == Bazy danych i kryteria
 *Bazy danych:*
@@ -109,6 +111,7 @@ AND
 - *Kryteria wykluczenia:* Publikacje niedostępne w ramach Otwartego Dostępu (Open Access).
 
 == Kryteria oceny jakości (QA) – Część I
+#[
 #set text(size: 18pt)
 - *QA1:* Czy praca opiera się na badaniach empirycznych (nie tylko teoretycznych)?
 - *QA2:* Czy cele dotyczące adaptacji LLM do systemów są jasne określone?
@@ -116,14 +119,17 @@ AND
 - *QA4:* Czy architektura agenta i strategia promptingu były odpowiednie do celów?
 - *QA5:* Czy metoda ewaluacji (np. win rate) była właściwa do oceny wydajności?
 - *QA6:* Czy określono jasną bazę porównawczą (np. tradycyjne AI, człowiek)?
+]
 
 == Kryteria oceny jakości (QA) – Część II
+#[
 #set text(size: 18pt)
 - *QA7:* Czy dane dotyczące wnioskowania LLM były zbierane w rygorystyczny sposób?
 - *QA8:* Czy analiza zachowania i wydajności agenta była wystarczająco wnikliwa?
 - *QA9:* Czy uwzględniono ograniczenia modelu (hallucynacje, okno kontekstowe, koszty)?
 - *QA10:* Czy sformułowano jasne wnioski dotyczące zdolności adaptacji na podstawie tekstu?
 - *QA11:* Czy badanie ma wartość dla rozwoju agentów w strategicznych grach planszowych?
+]
 
 == Proces SLR (Etap I)
 1. *Planowanie:* Wspólne ustalenie pytań oraz celów ekstrakcji.
@@ -150,14 +156,15 @@ AND
     stroke: 0.5pt + gray,
     [*Baza danych*], [*Znalezione*], [*Po deduplikacji*], [*Screening*], [*Full-text*],
     [IEEExplore], [3], [3], [3], [2],
-    [Katalog BPG], [47], [45], [12], [5],
+    [Katalog BPG], [47], [45], [12], [6],
     [SpringerLink], [99], [99], [20], [8],
-    [*Suma*], [*149*], [*147*], [*35*], [*15*],
+    [*Suma*], [*149*], [*147*], [*35*], [*16*],
   )
   #image("publications_by_year.png", width: 50%)
 ]
 
 == Wybrane artykuły do analizy
+#[
 #set text(size: 16pt)
 - @-_optimizing_2024 -- Optymalizacja strategii LLM w grze Mendikot przy użyciu inżynierii promptów.
 - @lore_strategic_2024 -- Badanie zachowań strategicznych LLM i roli struktury gry vs. kontekstu.
@@ -175,7 +182,7 @@ AND
 - @mouri_zadeh_khaki_evaluating_2026 -- Ewaluacja sprawiedliwości agentów negocjacyjnych LLM w grach ekonomicznych.
 - @lu_llms_2024 -- LLM i generatywne modele agentowe w badaniach nad systemami złożonymi.
 - @vidler_playing_2025 -- Losowość i strategia w grach LLM: awersja do straty i uprzedzenia stochastyczne.
-#set text(size: 20pt)
+]
 
 == Snowballing i statystyki
 *Kluczowe publikacje z 2023 r. (backward snowballing):*
@@ -190,6 +197,7 @@ AND
 _Włączenie tych pozycji uzupełniło tło teoretyczne o prace pionierskie z początkowego okresu rozwoju agentów opartych na LLM._
 
 == Wstępna ekstrakcja danych (1/2)
+#[
 #set text(size: 13pt)
 #let wniosek(body) = table.cell(colspan: 4, fill: luma(245), body)
 #table(
@@ -216,9 +224,12 @@ _Włączenie tych pozycji uzupełniło tło teoretyczne o prace pionierskie z po
   [StarCraft II],
   wniosek[Możliwa dynamiczna korekta strategii w czasie rzeczywistym bez ponownego trenowania. LLM adaptują się do zmian stanu gry.],
 )
+]
 
 == Wstępna ekstrakcja danych (2/2)
+#[
 #set text(size: 13pt)
+#let wniosek(body) = table.cell(colspan: 4, fill: luma(245), body)
 #table(
   columns: (1.6fr, 1.8fr, 1.3fr, 1.5fr),
   align: (left, left, left, left),
@@ -243,7 +254,7 @@ _Włączenie tych pozycji uzupełniło tło teoretyczne o prace pionierskie z po
   [Kamień-Papier-Nożyce, Dylemat więźnia],
   wniosek[LLM nie są losowe — silne uprzedzenia przy generowaniu wyborów, awersja do straty, zbieganie do patowej powtarzalności w RPS. Potrzeba zewnętrznego generatora losowości.],
 )
-#set text(size: 20pt)
+]
 
 = Wnioski
 

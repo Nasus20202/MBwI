@@ -201,17 +201,17 @@ Na podstawie pozyskanych danych utworzony został arkusz z informacjami:
       [*Po przeczytaniu (Full-text)*],
       
       [IEEExplore], [3], [3], [3], [2],
-      [Katalog BPG], [47], [45 (2)], [12], [5],
+      [Katalog BPG], [47], [45 (2)], [12], [6],
       [SpringerLink], [99], [99], [20], [8],
       
-      [*Suma*], [*149*], [*147 (2)*], [*35*], [*15*]
+      [*Suma*], [*149*], [*147 (2)*], [*35*], [*16*]
     )
   ],
   caption: [Zestawienie liczbowe artykułów na poszczególnych etapach procesu SLR z podziałem na bazy danych]
 )
 
 == Articles selected for data extraction
-Na podstawie kryteriów włączenia, wykluczenia oraz oceny jakości (QA), do pełnej lektury i analizy wybrano 15 artykułów:
+Na podstawie kryteriów włączenia, wykluczenia oraz oceny jakości (QA), do pełnej lektury i analizy wybrano 16 artykułów:
 
 - @-_optimizing_2024 -- Optymalizacja strategii LLM w grze Mendikot przy użyciu inżynierii promptów.
 - @lore_strategic_2024 -- Badanie zachowań strategicznych LLM i roli struktury gry vs. kontekstu.
@@ -228,6 +228,7 @@ Na podstawie kryteriów włączenia, wykluczenia oraz oceny jakości (QA), do pe
 - @fujii_predictive_2025 -- Predykcyjna analiza i ewaluacja rozgrywki z wykorzystaniem uczenia maszynowego.
 - @mouri_zadeh_khaki_evaluating_2026 -- Ewaluacja sprawiedliwości agentów negocjacyjnych LLM w grach ekonomicznych.
 - @lu_llms_2024 -- LLM i generatywne modele agentowe w badaniach nad systemami złożonymi.
+- @vidler_playing_2025 -- Losowość i strategia w grach LLM: awersja do straty i uprzedzenia stochastyczne.
 
 == Snowballed articles
 Zgodnie z metodologią przedstawioną na wykładzie, przeprowadzono przegląd list referencyjnych w artykułach zaakceptowanych do końcowej analizy. Celem było zidentyfikowanie najczęściej cytowanych pozycji, które nie zostały odnalezione w pierwotnym procesie wyszukiwania (np. ze względu na bycie starszymi niż założony próg lat lub specyficzne słowa kluczowe).
