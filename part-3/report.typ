@@ -99,7 +99,7 @@ Analiza powiązań kluczowych elementów projektowania badań z rzeczywistą str
 == Strengths
 - *Trafny dobór najnowszych modeli:* Badanie używa relatywnie najnowszego GPT-4o-Mini zamiast starszych (np. GPT-3.5 czy LLaMA 7B), co nadaje artykułowi dużą dozę współczesnego kontekstu do problemów nieprzewidywalności LLMów.
 - *Rzetelne podejście statystyczne:* Przeprowadzenie wielorundowych symulacji gier w setkach powtórzeń uwiarygadnia tezy. Testowanie jedno-strzałowe oraz wielo-strzałowe pozwala obiektywnie odróżnić reakcje w izolacji od reakcji w dążeniu strategicznym posiadającym historię gry.
-- *Identifikacja problemów technicznych:* Jasne zwrócenie uwagi na zachowania optymalizacyjne API dostawców LLM, co ma kluczowe znaczenie przy próbie wykorzystywania tych samych LLMów kilkukrotnie do pozornie jednakowych, lecz dążących do innej losowości wywołań. Zaproponowano od razu sposoby uniknięcia tego technicznego błędu.
+- *Identyfikacja problemów technicznych:* Jasne zwrócenie uwagi na zachowania optymalizacyjne API dostawców LLM, co ma kluczowe znaczenie przy próbie wykorzystywania tych samych LLMów kilkukrotnie do pozornie jednakowych, lecz dążących do innej losowości wywołań. Zaproponowano od razu sposoby uniknięcia tego technicznego błędu.
 - *Próby modyfikacji wejścia:* Wieloaspektowe podejście do definicji instrukcji i weryfikacji zmiany strategii poprzez odwracanie kolejności słów kluczowych czy dodawanie słowa "random".
 - *Potwierdzenie wbudowanej stronniczości modelu:* Jasne i przejrzyste zaraportowanie wyników jednostrzałowych (gdzie agent np. wybiera "Kamień" w aż 79% przypadków), co dowodzi nielosowych predyspozycji LLM, będących fundamentem hipotezy.
 - *Wnioskowanie z gier strategicznych:* Eksperyment z Dylematem Więźnia udowodnił wysoką wrażliwość modelu na sformułowanie instrukcji. Wyniki mierzalnie pokazują, jak agent przechodzi od kooperacji do skrajnej rywalizacji pod wpływem drobnej zmiany tekstu w regułach.
@@ -117,7 +117,7 @@ Podsumowując, artykuł ten stanowi solidną i godną polecenia pracę naukową 
 === Zalecane poprawki 
 W przyszłych badaniach lub rewizji artykułu autorzy powinni zdecydowanie rozszerzyć pule testowanych modeli (np. dodając LLaMA 3 czy Claude 3.5), aby uniknąć stronniczości wyników wywołanych treningiem jednego dostawcy. Powinni oni również wydzielić osobną, ustrukturyzowaną sekcję z dyskusją oraz ograniczeniami, by zadośćuczynić uniwersalnym standardom prezentacji prac naukowych.
 
-=== Błędy jezykowe 
+=== Błędy językowe
 Artykuł jest napisany poprawną, zwięzłą angielszczyzną naukową. Nie dopatrzono się rażących błędów językowych, jednak usterką redakcyjną jest łączenie "surowych" wyników z ich poznawczą interpretacją w tych samych akapitach bez jasnego przejścia.
 
 = Conclusions
@@ -135,4 +135,5 @@ Zaprojektowanie badania i jego wariant pilotażowy (Research design & pilot stud
 Krytyczna recenzja wybranego artykułu naukowego dostarczyła wzorców w zakresie rzetelnego raportowania wyników empirycznych. Pozwoliła zidentyfikować powszechne błędy warsztatowe, takie jak łączenie suchych danych statystycznych z interpretacją poznawczą czy brak odpowiedniego wyodrębnienia sekcji dyskusji i ograniczeń (limitations) badania.
 
 = Literature
-- A. Vidler and T. Walsh, "Playing games with Large language models: Randomness and strategy," _arXiv preprint arXiv:2503.02582v1 [cs.AI]_, Mar. 2025.
+#cite(label("vidler_playing_2025"), form: none)
+#bibliography("SLR.bib", title: none)
